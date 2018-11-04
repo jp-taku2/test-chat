@@ -6,15 +6,21 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/labstack/gommon/log"
+	"html/template"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
 )
 
+var templates map[string]*template.Template
+
 func main() {
 	e := echo.New()
 	e.Logger.SetLevel(log.DEBUG)
+
+	t := &Template{}
+	e.Renderer = t
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
@@ -41,4 +47,5 @@ func main() {
 
 func init() {
 	setting.Load()
+	loadTemplates()
 }

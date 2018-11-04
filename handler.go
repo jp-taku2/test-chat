@@ -25,7 +25,7 @@ func handleIndexGet(c echo.Context) error {
 }
 
 func handleLoginGet(c echo.Context) error {
-	return c.String(http.StatusOK, "handleLoginGet")
+	return c.Render(http.StatusOK, "login", nil)
 }
 
 func handleLoginPost(c echo.Context) error {
