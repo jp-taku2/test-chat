@@ -1,16 +1,18 @@
 package main
 
 import (
-	"./setting"
 	"context"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
-	"github.com/labstack/gommon/log"
 	"html/template"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"./setting"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
+	"github.com/labstack/gommon/log"
+
 )
 
 var templates map[string]*template.Template

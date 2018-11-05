@@ -17,7 +17,7 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 	return templates["error"].ExecuteTemplate(w, "layout.html", "Internal Server Error")
 }
 
-func loadTemplates()  {
+func loadTemplates() {
 	var baseTemplate = "templates/layout.html"
 	templates = make(map[string]*template.Template)
 
